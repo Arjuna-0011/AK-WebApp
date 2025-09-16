@@ -1,12 +1,9 @@
-const express = require("express");
-const app = express();
+const http = require('http');
 const port = process.env.PORT || 3000;
 
+http.createServer(function(request, response) {
+  response.writeHead(200, { 'Content-Type': 'text/plain' });
+  response.end('Hello World!');
+}).listen(port);
 
-app.get("/", (req, res) => {
-  res.send("Hello from Node.js on Azure!");
-});
-
-app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
-});
+console.log(`Server running at http://localhost:${port}`);
