@@ -1,9 +1,10 @@
 const http = require('http');
-const port = process.env.PORT || 3000;
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { "Content-Type": "text/html" });
+  res.end("<html><body><h1>Hello World, Arjun has done it</h1></body></html>");
+});
 
-http.createServer(function(request, response) {
-  response.writeHead(200, { 'Content-Type': 'text/plain' });
-  response.end('Hello World!');
-}).listen(port);
-
-console.log(`Server running at http://localhost:${port}`);
+const port = process.env.PORT || 1337;
+server.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}`);
+});
