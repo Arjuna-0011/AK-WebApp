@@ -1,10 +1,11 @@
 {
   "name": "repo",
   "version": "1.0.0",
-  "main": "index.js",
-"scripts": {
-  "test": "echo \"Tests passed\""
-},
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Tests passed\""
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
